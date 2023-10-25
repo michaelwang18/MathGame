@@ -34,6 +34,7 @@ public class MathGame {
         chooseStartingPlayer();  // this helper method (shown below) sets currentPlayer to either player1 or player2
         while (!gameOver) {
             printGameState();   // this helper method (shown below) prints the state of the Game
+            swapPlayers();
             while (currentPlayer.getOut()){
                 System.out.println("Swap check" + currentPlayer.getName());
                 swapPlayers(); //Looks for the next player that isn't out
@@ -59,9 +60,9 @@ public class MathGame {
     private void printGameState() {
         System.out.println("--------------------------------------");
         System.out.println("Current Scores:");
-        System.out.println(player1.getName() + ": " + player1.getScore() + player1.getOut());
-        System.out.println(player2.getName() + ": " + player2.getScore() + player2.getOut());
-        System.out.println(player3.getName() + ": " + player3.getScore() + player3.getOut());
+        System.out.println(player1.getName() + ": " + player1.getScore() + "Out: " + player1.getOut());
+        System.out.println(player2.getName() + ": " + player2.getScore() + "Out: " + player2.getOut());
+        System.out.println(player3.getName() + ": " + player3.getScore() + "Out: " + player3.getOut());
         System.out.println("Players out: " + playersOut);
         System.out.println("--------------------------------------");
     }
